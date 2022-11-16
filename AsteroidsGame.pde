@@ -18,3 +18,16 @@ public void draw()
   }
   Robin.show();
 }
+
+public void keyPressed() {
+  if(key == 'd'){
+     Robin.setMyPointDirection(Robin.getMyPointDirection() + 10);
+  }
+  if(key == 'a'){
+     Robin.setMyPointDirection(Robin.getMyPointDirection() - 10);
+  }
+  if(key == 'w'){
+     Robin.setMyXspeed(Robin.getMyXspeed() - 10);
+     Robin.setMyPointDirection(Robin.getMyPointDirection() - 10);
+  }
+}
