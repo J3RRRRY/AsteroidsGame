@@ -5,7 +5,7 @@ class Spaceship extends Floater  {
     yCorners = new int[]{-12, -8, -20, -8, 0, 8, 20, 8, 12, 0};    
     myColor = color((int)(Math.random()*06+156), (int)(Math.random()*256), (int)(Math.random()*256));   
     myCenterX = myCenterY = 200;//holds center coordinates   
-    myXspeed = myYspeed = 200; //holds the speed of travel in the x and y directions   
+    myXspeed = myYspeed = 0; //holds the speed of travel in the x and y directions   
     myPointDirection = 0; //holds current direction the ship is pointing in degrees  
   }
   public double getMyPointDirection(){return myPointDirection;}
