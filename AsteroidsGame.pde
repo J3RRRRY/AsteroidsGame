@@ -1,6 +1,12 @@
 //your variable declarations here
 Star [] nightSky = new Star[200];
 Spaceship Robin = new Spaceship();
+boolean accelerate = false;
+boolean rotateLeft = false;
+boolean rotateRight = false;
+boolean hyperspace = false;
+
+
 public void setup() 
 {
   size(500, 500);
@@ -17,17 +23,39 @@ public void draw()
     nightSky[i].show();
   }
   Robin.show();
+  if(accelerate == true) {
+    Robin.accelerate(0.1);
+  }
+  if(rotateLeft == true) {
+    Robin.turn(-5);
+  }
+  if(rotateRight == true) {
+    Robin.turn(5);
+  }
+  Robin.move();
 }
+  
 
 public void keyPressed() {
   if(key == 'd'){
-     Robin.setMyPointDirection(Robin.getMyPointDirection() + 10);
+    rotateRight = true;
   }
   if(key == 'a'){
-     Robin.setMyPointDirection(Robin.getMyPointDirection() - 10);
+    rotateLeft = true;
   }
   if(key == 'w'){
-     Robin.setMyXspeed(Robin.getMyXspeed() - 10);
-     Robin.setMyPointDirection(Robin.getMyPointDirection() - 10);
+    accelerate = true;
+  }
+}
+
+public void keyReleased() {
+  if(key == 'd'){
+    rotateRight = false;
+  }
+  if(key == 'a'){
+    rotateLeft = false;
+  }
+  if(key == 'w'){
+    accelerate = false;
   }
 }
