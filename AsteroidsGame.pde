@@ -7,6 +7,7 @@ boolean rotateRight = false;
 boolean hyperspace = false;
 
 
+
 public void setup() 
 {
   size(500, 500);
@@ -16,7 +17,7 @@ public void setup()
 }
 
 
-public void draw() 
+public void draw()
 {
   background(0);
   for(int i = 0; i < nightSky.length; i++) {
@@ -32,6 +33,9 @@ public void draw()
   if(rotateRight == true) {
     Robin.turn(5);
   }
+  if(rotateRight == false && rotateLeft == false && accelerate == false && hyperspace == true) {
+    Robin.hyperspace();
+  }
   Robin.move();
 }
   
@@ -46,6 +50,9 @@ public void keyPressed() {
   if(key == 'w'){
     accelerate = true;
   }
+  if(key == 's'){
+    hyperspace = true;
+  }
 }
 
 public void keyReleased() {
@@ -57,5 +64,8 @@ public void keyReleased() {
   }
   if(key == 'w'){
     accelerate = false;
+  }
+  if(key == 's'){
+    hyperspace = false;
   }
 }
