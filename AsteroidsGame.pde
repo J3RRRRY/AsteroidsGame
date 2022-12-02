@@ -1,6 +1,7 @@
 //your variable declarations here
 Star [] nightSky = new Star[200];
 Spaceship Robin = new Spaceship();
+ArrayList <Asteroid> ketchUpPacket = new ArrayList <Asteroid>();
 boolean accelerate = false;
 boolean rotateLeft = false;
 boolean rotateRight = false;
@@ -13,6 +14,10 @@ public void setup()
   size(500, 500);
   for(int i = 0; i < nightSky.length; i++) {
     nightSky[i] = new Star();
+  }
+  for(int i = 0; i < 5; i++) {
+    ketchUpPacket.add(new Asteroid());
+    System.out.println(ketchUpPacket);
   }
 }
 
