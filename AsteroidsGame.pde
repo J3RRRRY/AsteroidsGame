@@ -2,6 +2,7 @@
 Star [] nightSky = new Star[200];
 Spaceship Robin = new Spaceship();
 ArrayList <Asteroid> ketchUpPacket = new ArrayList <Asteroid>();
+//Asteroid [] juan = new Asteroid[10];
 boolean accelerate = false;
 boolean rotateLeft = false;
 boolean rotateRight = false;
@@ -15,9 +16,12 @@ public void setup()
   for(int i = 0; i < nightSky.length; i++) {
     nightSky[i] = new Star();
   }
-  for(int i = 0; i < 5; i++) {
+  //for(int i = 0; i < juan.length; i++) {
+  //  juan[i] = new Asteroid();
+  //}
+  for(int i = 0; i < 10; i++) {
     ketchUpPacket.add(new Asteroid());
-    System.out.println(ketchUpPacket);
+    //System.out.println(ketchUpPacket);
   }
 }
 
@@ -25,8 +29,21 @@ public void setup()
 public void draw()
 {
   background(0);
-  for(int i = 0; i < nightSky.length; i++) {
-    nightSky[i].show();
+  for(int s = 0; s < nightSky.length; s++) {
+    nightSky[s].show();
+  }
+  //for(int i = 0; i < juan.length; i++) {
+  //  //juan[i].show();
+  //}
+  for(int i = 0; i < ketchUpPacket.size(); i++) {
+    ketchUpPacket.get(i).move();
+    ketchUpPacket.get(i).show();
+    float distance = dist(((float)Robin.getMyCenterX()), ((float)Robin.getMyCenterY()), ((float)ketchUpPacket.get(i).getMyCenterX()), ((float)ketchUpPacket.get(i).getMyCenterY()));
+    if(distance <= 60) {
+      ketchUpPacket.remove(i);
+    }
+    //System.out.println(i);
+    //System.out.println(ketchUpPacket.get(i).getMyRotationSpeed());
   }
   Robin.show();
   if(accelerate == true) {
