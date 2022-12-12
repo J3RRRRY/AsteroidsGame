@@ -7,7 +7,8 @@ class Asteroid extends Floater  {
     myColor = color(200);   
     myCenterX = (int)(Math.random()*400);
     myCenterY = (int)(Math.random()*400);//holds center coordinates   
-    myXspeed = myYspeed = 0; //holds the speed of travel in the x and y directions   
+    myXspeed = Math.random()*2-1;
+    myYspeed = Math.random()*2-1; 
     myPointDirection = (int)(Math.random()*361); //holds current direction the ship is pointing in degrees 
     rotationSpeed = (Math.random()*4-2);
   }
@@ -25,9 +26,7 @@ class Asteroid extends Floater  {
     public void setMyCenterY(double y) {myCenterY = y;}
     
   public void move() {
-    super.move();
-    myXspeed = Math.cos(0);    
-    myYspeed = Math.sin(1); 
     turn(rotationSpeed);    
+    super.move();  
   }
 }
