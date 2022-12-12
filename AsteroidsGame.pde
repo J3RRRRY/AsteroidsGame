@@ -42,7 +42,7 @@ public void draw()
     ketchUpPacket.get(i).show();
     float distance = dist(((float)Robin.getMyCenterX()), ((float)Robin.getMyCenterY()), ((float)ketchUpPacket.get(i).getMyCenterX()), ((float)ketchUpPacket.get(i).getMyCenterY()));
     if(distance <= 60) {
-      //ketchUpPacket.remove(i);
+      ketchUpPacket.remove(i);
     }
     //System.out.println(i);
     //System.out.println(ketchUpPacket.get(i).getMyRotationSpeed());
